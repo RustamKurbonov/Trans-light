@@ -1,0 +1,241 @@
+.header {
+	background: url('../img/header_bg.jpg') center/cover no-repeat;
+	padding: 80px 0px 0px 0px;
+	&__top {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 80px;
+		width: 100%;
+		background: rgba(0, 91, 193, 0.6);
+		z-index: 10;
+	}
+	&__top-body {
+		display: flex;
+		max-width: 1860px;
+		margin: 0 auto;
+		align-items: center;
+		height: 100%;
+	}
+	&__logo {
+		flex: 0 1 785px;
+		margin: 0px 0px 0px 14px;
+		z-index: 12;
+		& img {
+			max-width: 140px;
+		}
+		@media (max-width:787.98px){
+			flex: 0 1 150px;
+		}
+	}
+	&__menu {
+		flex: 1 1 1305px;
+	}
+	&__list {
+		display: flex;
+	}
+	&__link {
+		position: relative;
+		z-index: 12;
+		& a {
+			font-weight: 600;
+			line-height: 19px;
+			color: #FFFFFF;
+			letter-spacing: 0.35px;
+			margin: 0px 25px 0px 0px;
+			transition: all 0.2s ease-in 0s;
+			position: relative;
+			&:before {
+				content: "";
+				display: inline-block;
+				position: absolute;
+				height: 1px;
+				width: 0;
+				background: #ffffff;
+				left: 50%;
+				bottom: -5px;
+				transition: all 0.2s ease-in 0s;	
+			}
+			&:hover {
+				transition: all 0.2s ease-in 0s;
+				color: #ffffff;
+				&:before {
+					transition: all 0.3s ease-in 0s;
+					width: 100%;
+					left: 0;
+				}
+			}
+		}
+	}
+	&__container {
+		max-width: 1110px;
+		margin: 0 auto;
+		position: relative;
+		margin: 0px auto;
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			height: 100%;
+			width: 444px;
+			background: rgba(0, 91, 193, 0.6);
+			top: 0;
+			left: 0;
+			@media (max-width:787.98px){
+				left: 30px;
+			}
+			@media (max-width:539.98px){
+				width: 210px;
+			}
+			@media (max-width:479.98px){
+				width: 150px;
+			}
+		}
+		@media (max-width:787.98px){
+			padding: 10px;
+		}
+	}
+	&__item {
+		padding: 200px 0px 200px 190px;
+		@media (max-width:787.98px){
+		
+			padding: 140px 0px;
+		}
+	}
+	&__title {
+		max-width: 620px;
+		position: relative;
+		z-index: 2;
+		font-family: 'Oswald';
+		font-size: 48px;
+		line-height: 71px;
+		letter-spacing: 0.01em;
+		color: #ffffff;
+	}
+	&__text {
+		position: relative;
+		z-index: 2;
+		max-width: 450px;
+		font-size: 16px;
+		line-height: 22px;
+		color: #FFFFFF;
+		margin: 42px 0px;
+	}
+	&__btn {
+		& a {
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 22px;
+			color: #FFFFFF;
+			position: relative;
+			z-index: 2;
+			height: 51px;
+			width: 160px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 2px solid #FFFFFF;
+			background: #005BC1;
+			transition: all 0.5s ease 0s;
+			&:hover {
+				background: #0072ff;
+				transition: all 0.5s ease 0s;
+			}
+		}
+	}
+}
+
+//======================================================
+ @media (max-width:787.98px){
+ 	body.lock {
+		overflow: hidden;
+	}
+ 	.header {
+		&__burger {
+			display: block;
+			position: absolute;
+			width: 35px;
+			height: 28px;
+			z-index: 5;
+			right: 20px;
+			&:before {
+				content: "";
+				background-color: #ffffff;
+				position: absolute;
+				width: 100%;
+				height: 3px;
+				left: 0;
+				top: 0;
+				transition: all 0.5s ease 0s;
+			}
+			&:after {
+				content: "";
+				background-color: #ffffff;
+				position: absolute;
+				width: 100%;
+				height: 3px;
+				left: 0;
+				bottom: 0;
+				transition: all 0.5s ease 0s;
+			}
+			& span {
+				position: absolute;
+				background-color: #ffffff;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				top: 12px;
+				transition: all 0.5s ease 0s;
+			}
+			&.active {
+				&:before {
+					transform: rotate(-315deg); 
+					transition: all 0.5s ease 0s;
+					top: 13px;
+				}
+				&:after {
+					transform: rotate(315deg); 
+					transition: all 0.5s ease 0s;
+					bottom: 12px;
+				}
+				& span {
+					display: none;
+					transition: all 0.4s ease 0s;
+				}
+			}
+		}
+		&__menu {
+			position: fixed;
+			width: 100%;
+			height: 0;
+			left: 0;
+			top: 0;
+			background: #0072ff;
+			z-index: 2;
+			transition: all 0.5s ease-in 0s;
+			opacity: 0.9;
+			&.active {
+				transition: all 0.5s ease-out 0s;
+				height: 100%;
+				.header__link {
+					transition: all 0.5s ease-end 0s;
+					left: 20px;
+				}
+			}
+		}
+		&__list {
+			display: block;
+		}
+		&__link {
+			transition: all 0.5s ease-out 0s;
+			position: relative;
+			z-index: 12;
+			top: 120px;
+			left: -100%;
+			margin: 0px 0px 50px 0px;
+			& a {
+				font-size: 24px;
+			}
+		}
+	}
+} 
