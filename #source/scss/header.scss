@@ -212,26 +212,25 @@
 			top: 0;
 			background: #0072ff;
 			z-index: 2;
-			transition: all 0.5s ease-in 0s;
+			transition: all 0.3s ease-in 0s;
 			opacity: 0.9;
 			&.active {
-				transition: all 0.5s ease-out 0s;
+				transition: all 0.3s ease-out 0s;
 				height: 100%;
-				.header__link {
-					transition: all 0.5s ease-end 0s;
-					left: 20px;
+				.header__list {
+					display: block;
 				}
 			}
 		}
 		&__list {
-			display: block;
+			display: none;
 		}
 		&__link {
 			transition: all 0.5s ease-out 0s;
 			position: relative;
 			z-index: 12;
 			top: 120px;
-			left: -100%;
+			left: 10px;
 			margin: 0px 0px 50px 0px;
 			& a {
 				font-size: 24px;
